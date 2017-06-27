@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="leftpanel">
+    <div class="media profile-left">
+        <a class="pull-left profile-thumb" href="profile.html">
+            <img class="img-circle" th:src="@{resources/admin/images/photos/profile.png}" alt="">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">Elen Adarna</h4>
+            <small class="text-muted">Beach Lover</small>
+        </div>
+    </div><!-- media -->
+
+    <h5 class="leftpanel-title">Navigation</h5>
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+        <li class="parent"><a href=""><i class="fa fa-suitcase"></i> <span>Register</span></a>
+            <ul class="children">
+                <li><a th:href="@{/admin/user-cu}">User Register</a></li>
+                <li><a th:href="@{/admin/role-cu}">Role Register</a></li>
+            </ul>
+        </li>
+        <li class="parent"><a href=""><i class="fa fa-suitcase"></i> <span>Lists</span></a>
+            <ul class="children">
+                <li><a th:href="@{/admin/user-list}">User List</a></li>
+                <li><a th:href="@{/admin/role-list}">Role List</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</div><!-- leftpanel -->
+
+</html>

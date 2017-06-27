@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title layout:title-pattern="$CONTENT_TITLE - $DECORATOR_TITLE">KA Admin</title>
+
+    <style th:replace="@{/shared/admin/_style}"></style>
+
+</head>
+<body>
+
+<div th:replace="@{/shared/admin/_header}"></div>
+
+<section>
+    <div class="mainwrapper">
+            <div th:replace="/shared/admin/_left-side-bar"></div>
+
+            <div layout:fragment="content">
+
+            </div>
+    </div><!-- mainwrapper -->
+</section>
+
+<div th:replace="/shared/admin/_script"></div>
+
+</body>
+</html>

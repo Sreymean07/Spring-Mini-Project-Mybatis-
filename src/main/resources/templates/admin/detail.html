@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/admin/admin_layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail-User</title>
+</head>
+<body>
+
+
+<div layout:fragment="content">
+
+    <div class="mainpanel">
+
+        <div class="pageheader">
+            <div class="media">
+                <div class="pageicon pull-left">
+                    <i class="fa fa-pencil"></i>
+                </div>
+                <div class="media-body">
+                    <ul class="breadcrumb">
+                        <li><a href=""><i class="glyphicon glyphicon-home"></i></a></li>
+                        <li><a href="">User Forms</a></li>
+                        <li>User Input Forms</li>
+                    </ul>
+                    <h4>User Forms</h4>
+                </div>
+            </div><!-- media -->
+        </div><!-- pageheader -->
+
+        <div class="contentpanel">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-btns">
+                                <a href="" class="panel-minimize tooltips" data-toggle="tooltip" title="Minimize Panel"><i class="fa fa-minus"></i></a>
+                                <a href="" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                            </div><!-- panel-btns -->
+                            <h4 class="panel-title">User Input Fields</h4>
+                        </div><!-- panel-heading -->
+
+                        <div class="panel-body nopadding">
+
+                            <form class="form-horizontal form-bordered" th:object="${USER}">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Username : </label>
+                                    <div class="col-sm-10">
+                                        <input disabled type="text" placeholder="Username" class="form-control"  th:field="*{username}"/>
+                                    </div>
+                                </div><!-- form-group -->
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Password : </label>
+                                    <div class="col-sm-10">
+                                        <input disabled type="text"  placeholder="Password" class="form-control"  th:field="*{password}"/>
+                                    </div>
+                                </div><!-- form-group -->
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Email : </label>
+                                    <div class="col-sm-10">
+                                        <input disabled type="email"  placeholder="Email" class="form-control" th:field="*{email}"/>
+                                    </div>
+                                </div><!-- form-group -->
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">gender</label>
+                                    <div class="col-sm-10">
+                                        <select disabled id="select-search-hide" data-placeholder="Choose One" class="width300"  th:field="*{gender}">
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                        </select>
+                                    </div>
+                                </div><!-- form-group -->
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">HashCode : </label>
+                                    <div class="col-sm-10">
+                                        <input disabled placeholder="HashCode" class="form-control" name="userHash" type="text"  th:field="*{userHash}"/>
+                                    </div>
+                                </div><!-- form-group -->
+
+                            </form>
+                        </div><!-- panel-body -->
+                    </div><!-- panel -->
+
+                </div><!-- col-md-12 -->
+
+            </div><!-- row -->
+
+
+        </div><!-- contentpanel -->
+
+    </div><!-- mainpanel -->
+
+</div>
+
+</body>
+</html>

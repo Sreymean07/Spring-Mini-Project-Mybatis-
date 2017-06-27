@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/admin/admin_layout">
+<head>
+    <meta charset="UTF-8">
+    <title>DashBoard</title>
+</head>
+<body>
+
+
+<div layout:fragment="content">
+
+
+    <div class="mainpanel">
+        <div class="pageheader">
+            <div class="media">
+                <div class="pageicon pull-left">
+                    <i class="fa fa-th-list"></i>
+                </div>
+                <div class="media-body">
+                    <ul class="breadcrumb">
+                        <li><a href=""><i class="glyphicon glyphicon-home"></i></a></li>
+                        <li><a href="">Lists</a></li>
+                        <li>Role Tables</li>
+                    </ul>
+                    <h4>Role List</h4>
+                </div>
+            </div><!-- media -->
+        </div><!-- pageheader -->
+
+        <div class="contentpanel">
+
+            <div class="row">
+
+            </div>
+            <h5 class="lg-title mb5">Colored Tables</h5>
+            <p class="mb20">An example of colored tables in the header</p>
+
+            <div class="row">
+
+
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-info mb30">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- table-responsive -->
+                </div>
+
+            </div><!-- row -->
+        </div><!-- contentpanel -->
+    </div><!-- mainpanel -->
+
+</div>
+
+</body>
+</html>

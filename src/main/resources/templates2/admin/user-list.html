@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="/admin/admin_layout">
+<head>
+    <meta charset="UTF-8">
+    <title>DashBoard</title>
+</head>
+<body>
+
+
+<div layout:fragment="content">
+
+
+    <div class="mainpanel">
+        <div class="pageheader">
+            <div class="media">
+                <div class="pageicon pull-left">
+                    <i class="fa fa-th-list"></i>
+                </div>
+                <div class="media-body">
+                    <ul class="breadcrumb">
+                        <li><a href=""><i class="glyphicon glyphicon-home"></i></a></li>
+                        <li><a href="">Lists</a></li>
+                        <li>User Tables</li>
+                    </ul>
+                    <h4>User List</h4>
+                </div>
+            </div><!-- media -->
+        </div><!-- pageheader -->
+
+        <div class="contentpanel">
+
+            <div class="row">
+
+            </div>
+            <h5 class="lg-title mb5">Colored Tables</h5>
+            <p class="mb20">An example of colored tables in the header</p>
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-danger mb30">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Gmail</th>
+                                <th>Gender</th>
+                                <th>Options</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="L:${LIST}" data-toggle="modal" data-target="#myModal" class="myTable">
+                                <td th:text="${L.id}"></td>
+                                <td th:text="${L.username}"></td>
+                                <td th:text="${L.password}"></td>
+                                <td th:text="${L.email}"></td>
+                                <td th:text="${L.gender}"></td>
+                                <td><a th:href="@{/delete/}+${L.userHash}"><button class="btn btn-default btn-xs btn-bordered" th:text="#{delete}"></button></a>
+                                    <span>|</span>
+                                    <a th:href="@{/admin/update/}+${L.userHash}"><button class="btn btn-default btn-xs btn-bordered"  th:text="#{update}"></button></a>
+                                    <span>|</span>
+                                    <a th:href="@{/admin/detail/}+${L.userHash}"><button class="btn btn-default btn-xs btn-bordered"   th:text="#{detail}"></button></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- table-responsive -->
+                </div>
+
+            </div><!-- row -->
+        </div><!-- contentpanel -->
+    </div><!-- mainpanel -->
+
+</div>
+
+</body>
+</html>
