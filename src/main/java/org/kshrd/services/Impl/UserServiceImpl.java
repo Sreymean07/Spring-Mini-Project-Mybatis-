@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by sovannarith on 6/26/17.
@@ -37,10 +38,13 @@ public class UserServiceImpl implements UserService {
 //		String userHash = UUID.randomUUID().toString();
 //		SignUpWith signUpWith = new SignUpWith(2,null);
 //		user.setSignUpWith(signUpWith);
+    	String userHash = UUID.randomUUID().toString();
+        user.setUserHash(userHash);
         boolean status = userRepository.save(user);
         if (status) {
             System.out.println("USER ID : " + user.getId());
             System.out.println("USER SignUpWith : " + user.getSignUpWith().getId());
+            System.out.println("userhash  "+user.getUserHash());
             System.out.println("User has been inserted!");
         } else {
             System.out.println("User has not been inserted!.");

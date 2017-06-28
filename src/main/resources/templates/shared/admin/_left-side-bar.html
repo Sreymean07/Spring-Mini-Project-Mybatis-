@@ -12,8 +12,9 @@
 
     <h5 class="leftpanel-title">Navigation</h5>
     <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-        <li class="parent"><a href=""><i class="fa fa-suitcase"></i> <span>Register</span></a>
+    
+     <li class="active"><a href="dashboard.html"><i class="fa fa-home"></i> <span th:text="#{Dashboard}">Dashboard</span></a></li>
+    <li class="parent"><a href=""><i class="fa fa-suitcase"></i> <span>Register</span></a>
             <ul class="children">
                 <li><a th:href="@{/admin/user-cu}">User Register</a></li>
                 <li><a th:href="@{/admin/role-cu}">Role Register</a></li>

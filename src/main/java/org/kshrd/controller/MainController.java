@@ -21,8 +21,6 @@ public class MainController {
     public String user_cu(ModelMap model) {
         User user = new User();
         SignUpWith signUpWith = new SignUpWith(1, null);
-        String userHash = UUID.randomUUID().toString();
-        user.setUserHash(userHash);
         user.setSignUpWith(signUpWith);
         model.addAttribute("USER", user);
         return "/admin/user-cu";
@@ -94,7 +92,7 @@ public class MainController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     // @ResponseBody
     public String save(@ModelAttribute User user) {
-        System.out.print(user.getUserHash());
+        System.out.print("qqqqqq"+user.getUserHash());
         userService.save(user);
         System.out.print(user.getUserHash());
         return "redirect:/admin/user-list";
